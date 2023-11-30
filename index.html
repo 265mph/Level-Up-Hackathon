@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Admin</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+    <!-- ******************** TOP NAVIGATION BAR ******************** -->
+    <nav>
+        <div class="logo" >
+            <a href="https://www.shopify.com/" target="_blank" class="logo-desktop" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="105" height="30" viewBox="0 0 105 30" fill="none">
+                    <path d="M36.2166 16.6517C35.3235 16.1564 34.8535 15.7555 34.8535 15.1895C34.8535 14.4584 35.4881 14.0103 36.4987 14.0103C37.6738 14.0103 38.7079 14.5056 38.7079 14.5056L39.5305 11.9821C39.5305 11.9821 38.7784 11.3925 36.5457 11.3925C33.4433 11.3925 31.2811 13.1849 31.2811 15.6847C31.2811 17.0998 32.2917 18.1846 33.6313 18.9629C34.7125 19.5761 35.0885 20.0241 35.0885 20.6609C35.0885 21.3448 34.5479 21.8873 33.5373 21.8873C32.0332 21.8873 30.623 21.109 30.623 21.109L29.7534 23.6325C29.7534 23.6325 31.0696 24.505 33.2553 24.505C36.4517 24.505 38.7314 22.9249 38.7314 20.0949C38.7784 18.5384 37.6033 17.4535 36.2166 16.6517Z" fill="white"/>
+                    <path d="M48.9549 11.3453C47.3803 11.3453 46.1581 12.1 45.1945 13.232L45.1475 13.2084L46.5107 6.039H42.9383L39.4834 24.2692H43.0323L44.2074 18.0431C44.6775 15.6847 45.8761 14.2461 47.0042 14.2461C47.8033 14.2461 48.1088 14.7886 48.1088 15.5668C48.1088 16.0621 48.0618 16.6517 47.9443 17.1469L46.6047 24.2928H50.1536L51.5402 16.9347C51.7047 16.1564 51.7988 15.2366 51.7988 14.5999C51.8458 12.5481 50.8116 11.3453 48.9549 11.3453Z" fill="white"/>
+                    <path d="M59.884 11.3453C55.6065 11.3453 52.7627 15.2131 52.7627 19.5289C52.7627 22.2882 54.4549 24.5286 57.6512 24.5286C61.8582 24.5286 64.6785 20.7552 64.6785 16.3451C64.702 13.7745 63.2214 11.3453 59.884 11.3453ZM58.1448 21.7693C56.9227 21.7693 56.4291 20.7316 56.4291 19.4345C56.4291 17.3828 57.4867 14.0575 59.4139 14.0575C60.6831 14.0575 61.0826 15.1423 61.0826 16.2036C61.0826 18.4204 60.025 21.7693 58.1448 21.7693Z" fill="white"/>
+                    <path d="M73.7971 11.3453C71.3998 11.3453 70.0366 13.4679 70.0366 13.4679H69.9896L70.2012 11.5576H67.0518C66.8873 12.8547 66.6053 14.8121 66.3232 16.2979L63.8555 29.3161H67.4044L68.3915 24.0334H68.462C68.462 24.0334 69.1906 24.505 70.5537 24.505C74.7372 24.505 77.4635 20.2128 77.4635 15.8734C77.4635 13.4915 76.4059 11.3453 73.7971 11.3453ZM70.4127 21.8401C69.4961 21.8401 68.9555 21.3212 68.9555 21.3212L69.5431 17.9959C69.9661 15.7791 71.1178 14.2933 72.3399 14.2933C73.421 14.2933 73.7501 15.3074 73.7501 16.2507C73.7501 18.5384 72.3869 21.8401 70.4127 21.8401Z" fill="white"/>
+                    <path d="M82.5403 6.22766C81.4122 6.22766 80.4956 7.12384 80.4956 8.30303C80.4956 9.36429 81.1537 10.0954 82.1643 10.0954H82.2113C83.3159 10.0954 84.2795 9.34071 84.303 8.02002C84.3265 6.95876 83.6215 6.22766 82.5403 6.22766Z" fill="white"/>
+                    <path d="M77.5576 24.2692H81.13L83.5508 11.6284H79.9549L77.5576 24.2692Z" fill="white"/>
+                    <path d="M92.5759 11.6047H90.1081L90.2257 11.0152C90.4372 9.78881 91.1423 8.70396 92.3409 8.70396C92.9755 8.70396 93.469 8.89263 93.469 8.89263L94.1741 6.10975C94.1741 6.10975 93.563 5.80316 92.2469 5.80316C90.9777 5.80316 89.7321 6.15692 88.7685 6.98235C87.5464 8.02003 86.9823 9.5058 86.7003 11.0152L86.6062 11.6047H84.9611L84.444 14.2933H86.0892L84.209 24.2692H87.7579L89.6381 14.2933H92.0824L92.5759 11.6047Z" fill="white"/>
+                    <path d="M101.131 11.6284C101.131 11.6284 98.8982 17.2413 97.9111 20.3072H97.8641C97.7936 19.3166 96.9945 11.6284 96.9945 11.6284H93.2576L95.3963 23.2315C95.4433 23.491 95.4198 23.656 95.3258 23.8211C94.9028 24.623 94.2212 25.4012 93.3986 25.9672C92.7405 26.4625 91.9884 26.7691 91.4009 26.9813L92.388 30.0001C93.1166 29.835 94.5972 29.2454 95.8664 28.0662C97.4881 26.5332 98.9922 24.1985 100.52 20.9911L104.868 11.6284H101.131Z" fill="white"/>
+                    <path d="M17.5094 3.42124C17.5094 3.42124 17.1804 3.51558 16.6398 3.68066C16.5458 3.37407 16.4048 3.02032 16.2168 2.64298C15.6057 1.46379 14.6891 0.827035 13.608 0.827035C13.5375 0.827035 13.467 0.827035 13.373 0.850619C13.3495 0.803451 13.3025 0.779868 13.279 0.7327C12.8089 0.213859 12.1978 -0.0219779 11.4693 0.00160577C10.0591 0.0487732 8.64896 1.06287 7.52083 2.87882C6.72174 4.15234 6.11068 5.75603 5.94616 7.00596C4.32448 7.50122 3.19635 7.85498 3.17285 7.87856C2.35026 8.13798 2.32676 8.16156 2.23275 8.93983C2.16224 9.52942 0 26.1323 0 26.1323L17.768 29.2218V3.39766C17.6269 3.39766 17.5564 3.42124 17.5094 3.42124ZM13.3965 4.69476C12.4564 4.97776 11.4223 5.30794 10.4116 5.61452C10.6937 4.50609 11.2577 3.39766 11.9158 2.66656C12.1743 2.40714 12.5269 2.10055 12.9264 1.91188C13.326 2.7609 13.42 3.9165 13.3965 4.69476ZM11.4693 0.968537C11.7983 0.968537 12.0803 1.03929 12.3154 1.18079C11.9393 1.36946 11.5633 1.67605 11.2107 2.0298C10.3176 2.99673 9.63606 4.50609 9.35403 5.9447C8.50794 6.20412 7.66185 6.46354 6.88626 6.69937C7.40332 4.43534 9.30703 1.0157 11.4693 0.968537ZM8.74297 13.9396C8.83698 15.4489 12.8089 15.7791 13.0439 19.3402C13.2085 22.1467 11.5633 24.057 9.18952 24.1985C6.3222 24.3871 4.74752 22.6891 4.74752 22.6891L5.35859 20.0949C5.35859 20.0949 6.93327 21.2977 8.20241 21.2033C9.025 21.1562 9.33053 20.4722 9.30703 20.0006C9.18952 18.0195 5.94616 18.1375 5.73463 14.8829C5.54661 12.1472 7.33281 9.38791 11.2812 9.12849C12.8089 9.03416 13.5845 9.4115 13.5845 9.4115L12.6914 12.8075C12.6914 12.8075 11.6808 12.3359 10.4822 12.4302C8.74297 12.5481 8.71946 13.6566 8.74297 13.9396ZM14.3366 4.41176C14.3366 3.70425 14.2426 2.69015 13.9135 1.84113C14.9947 2.05339 15.5117 3.25616 15.7467 3.98725C15.3237 4.10517 14.8536 4.24667 14.3366 4.41176Z" fill="white"/>
+                    <path d="M18.3081 29.1747L25.6879 27.3352C25.6879 27.3352 22.5151 5.80326 22.4916 5.66176C22.4681 5.52025 22.3506 5.42592 22.233 5.42592C22.1155 5.42592 20.0473 5.37875 20.0473 5.37875C20.0473 5.37875 18.7782 4.1524 18.3081 3.68073V29.1747Z" fill="white"/>
+                </svg>
+            </a>
+            <a href="https://www.shopify.com/" target="_blank" class="logo-mobile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M21.2105 3.8041C21.2105 3.8041 20.8505 3.90691 20.259 4.08683C20.1561 3.75269 20.0018 3.36715 19.7961 2.9559C19.1274 1.67076 18.1245 0.976788 16.9415 0.976788C16.8644 0.976788 16.7872 0.976788 16.6843 1.00249C16.6586 0.951085 16.6072 0.925382 16.5815 0.873977C16.0671 0.308515 15.3985 0.0514867 14.6013 0.0771895C13.0583 0.128595 11.5152 1.23382 10.2808 3.21293C9.40646 4.60088 8.73782 6.34867 8.55781 7.71092C6.78334 8.25068 5.54893 8.63623 5.52321 8.66193C4.62312 8.94466 4.59741 8.97036 4.49454 9.81855C4.34024 10.4611 2 28.5816 2 28.5816L21.442 31.9487V3.75269C21.3391 3.77839 21.2619 3.77839 21.2105 3.8041ZM16.7101 5.19205C15.6814 5.50048 14.5498 5.86032 13.444 6.19446C13.7526 4.98643 14.3698 3.77839 15.0899 2.98161C15.3728 2.69888 15.7585 2.36474 16.1957 2.15912C16.6329 3.08442 16.7358 4.34386 16.7101 5.19205ZM14.627 1.1053C14.987 1.1053 15.2956 1.18241 15.5528 1.33663C15.1413 1.54225 14.7299 1.87639 14.3441 2.26193C13.3669 3.31574 12.6211 4.96072 12.3125 6.52859C11.3867 6.81133 10.4609 7.09406 9.6122 7.35108C10.1523 4.90932 12.2353 1.18241 14.627 1.1053ZM11.6181 15.2418C11.721 16.8868 16.0671 17.2467 16.3243 21.1278C16.5043 24.1864 14.7041 26.2684 12.1067 26.4226C8.96928 26.6282 7.24625 24.7776 7.24625 24.7776L7.91488 21.9503C7.91488 21.9503 9.63792 23.2611 11.0266 23.1583C11.9267 23.1069 12.261 22.3615 12.2353 21.8475C12.1067 19.6884 8.55781 19.8169 8.32635 16.27C8.12062 13.3141 10.0751 10.3069 14.3955 10.0242C16.0671 9.92137 16.9158 10.3326 16.9158 10.3326L15.9386 14.0338C15.9386 14.0338 14.8327 13.5198 13.5212 13.6226C11.6181 13.7511 11.5924 14.9591 11.6181 15.2418ZM17.7387 4.88362C17.7387 4.11253 17.6359 3.00731 17.2758 2.08201C18.4588 2.31333 19.0246 3.62418 19.2817 4.42096C18.8188 4.54948 18.3045 4.7037 17.7387 4.88362Z" fill="white"/>
+                    <path d="M22.085 31.8458L30.1601 29.841C30.1601 29.841 26.6883 6.37429 26.6626 6.22007C26.6369 6.06585 26.5083 5.96304 26.3797 5.96304C26.2511 5.96304 23.988 5.91164 23.988 5.91164C23.988 5.91164 22.5993 4.57509 22.085 4.06104V31.8458Z" fill="white"/>
+                </svg>
+            </a>
+        </div>
+
+
+        <!-- ******************** SEARCH BAR ******************** -->
+        <div class="search-bar">
+            <svg height="14" viewBox="0 0 13 14" width="13" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="m8.82264 10.3833c-.92307.7008-2.07429 1.1167-3.32264 1.1167-3.03757 0-5.5-2.46243-5.5-5.5s2.46243-5.5 5.5-5.5 5.5 2.46243 5.5 5.5c0 1.24835-.4159 2.39957-1.1167 3.32264l2.897 2.89706c.2929.2929.2929.7677 0 1.0606s-.7677.2929-1.0606 0zm.67736-4.3833c0 2.20914-1.79086 4-4 4s-4-1.79086-4-4 1.79086-4 4-4 4 1.79086 4 4z" fill="#fff" fill-rule="evenodd"/>
+            </svg>
+            <input tabindex="0" type="search" placeholder="Search" aria-label="Search Shopify" id="search-input">
+        </div>
+
+
+        <!-- ******************** NOTIFICATION ALERTS ******************** -->
+        <div class="right-nav">
+            <button class="alert-icon" aria-haspopup="true" aria-expanded="false" aria-controls="notification-dropdown" id="notification-button">
+
+                <svg width="41" height="40" viewBox="0 0 21 20" fill="#E3E3E3" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.75203 14.4239L5.3061 14.1427C3.45144 13.9295 2.92542 11.4844 4.52838 10.5274L4.5933 10.4886C5.466 9.96761 6.00045 9.02609 6.00045 8.00969V7.5C6.00045 5.01472 8.01517 3 10.5005 3C12.9857 3 15.0005 5.01472 15.0005 7.5V8.00969C15.0005 9.02609 15.5349 9.96761 16.4076 10.4886L16.4725 10.5274C18.0755 11.4844 17.5495 13.9295 15.6948 14.1427L13.152 14.435V14.8C13.152 16.2912 11.9432 17.5 10.452 17.5C8.96086 17.5 7.75203 16.2912 7.75203 14.8V14.4239ZM11.652 14.5H9.25203V14.8C9.25203 15.4627 9.78929 16 10.452 16C11.1148 16 11.652 15.4627 11.652 14.8V14.5ZM8.50045 13H12.5005L15.5235 12.6525C15.953 12.6032 16.0748 12.0369 15.7036 11.8153L15.6387 11.7766C15.5591 11.7291 15.4815 11.6793 15.4057 11.6273C15.2506 11.521 15.1036 11.4055 14.9651 11.2818C14.9405 11.2598 14.9162 11.2377 14.8922 11.2152C14.0144 10.395 13.5005 9.23833 13.5005 8.00969V7.5C13.5005 5.84315 12.1573 4.5 10.5005 4.5C8.8436 4.5 7.50045 5.84315 7.50045 7.5V8.00969C7.50045 9.23833 6.98651 10.395 6.10871 11.2152C6.08469 11.2377 6.06039 11.2598 6.03583 11.2818C5.89734 11.4055 5.75029 11.521 5.59523 11.6273C5.51945 11.6793 5.44176 11.7291 5.36222 11.7766L5.29729 11.8153C4.9261 12.0369 5.0479 12.6032 5.47739 12.6525L8.50045 13Z" fill="#fff"/>
+                </svg>
+            </button>
+
+            <!-- ******************** ALERT DROP-DOWN ******************** -->
+            <ul class="alert-dropdown" id="notification-dropdown" aria-labelledby="notification-button" role="menu">
+                <div class="alert-dropdown-header">
+                    <p>Alerts</p>
+                    <div class="alert-dropdown-icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z" fill="#616161"/>
+                            <path d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z" fill="#616161"/>
+                            <path d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z" fill="#616161"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M13.2803 9.03033C13.5732 8.73744 13.5732 8.26256 13.2803 7.96967C12.9874 7.67678 12.5126 7.67678 12.2197 7.96967L9.25 10.9393L8.03033 9.71967C7.73744 9.42678 7.26256 9.42678 6.96967 9.71967C6.67678 10.0126 6.67678 10.4874 6.96967 10.7803L8.71967 12.5303C9.01256 12.8232 9.48744 12.8232 9.78033 12.5303L13.2803 9.03033Z" fill="#616161"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.5 10C15.5 13.0376 13.0376 15.5 10 15.5C6.96243 15.5 4.5 13.0376 4.5 10C4.5 6.96243 6.96243 4.5 10 4.5C13.0376 4.5 15.5 6.96243 15.5 10Z" fill="#616161"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <li class="alert-dropdown-info" >
+                    <a href="" role="menuitem">
+                        <p>Alerts about your store and account will show here</p>
+                    </a>
+                </li>
+            </ul>
+
+
+            <!-- ******************** PROFILE DETAILS ******************** -->
+            <button class="profile-details" id="pd-button" aria-haspopup="true" aria-expanded="false" aria-controls="pd-dropdown">
+                <div class="profile-name">
+                    <p>Davii Collections</p>
+                </div>
+                <div class="profile-avatar">
+                    <p>DC</p>
+                </div>
+            </button>
+
+            <!-- ******************** PROFILE DETAILS DROP-DOWN ******************** -->
+            <ul class="profile-details-dropdown" id="pd-dropdown" role="menu" aria-labelledby="pd-button">
+                <div class="pd-first-section">
+                    <div class="pd-header">
+                        <div class="pd-header-name">
+                            <div class="profile-avatar">
+                                <p>DC</p>
+                            </div>
+                            <div class="profile-name">
+                                <p>Davii Collections</p>
+                            </div>
+                        </div>
+
+                          <div class="pd-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.25rem" height="1.25rem" viewBox="0 0 16 16" fill="none">
+                                <path d="M13.3332 4L5.99984 11.3333L2.6665 8" stroke="#303030" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <li class="all-stores">
+                        <a href="admin.shopify.com" role="menuitem">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.257 3H6.74302C6.35944 3 5.9971 3.17611 5.76012 3.47772L3.37394 6.51468C3.13169 6.823 3 7.20375 3 7.59586V8.25C3 9.31867 3.60958 10.245 4.5 10.7001V15.25C4.5 16.2165 5.2835 17 6.25 17H13.75C14.7165 17 15.5 16.2165 15.5 15.25V10.7001C16.3904 10.245 17 9.31867 17 8.25V7.76879C17 7.26465 16.8307 6.77511 16.5192 6.3787L14.2399 3.47772C14.0029 3.17611 13.6406 3 13.257 3ZM13 15.5H13.75C13.8881 15.5 14 15.3881 14 15.25V11C13.212 11 12.5014 10.6686 12 10.1375C11.4986 10.6686 10.788 11 10 11C9.21199 11 8.50138 10.6686 8 10.1375C7.49862 10.6686 6.78801 11 6 11V15.25C6 15.3881 6.11193 15.5 6.25 15.5H10V13C10 12.4477 10.4477 12 11 12H12C12.5523 12 13 12.4477 13 13V15.5ZM6 9.5H5.75C5.05964 9.5 4.5 8.94036 4.5 8.25V7.59586C4.5 7.53985 4.51881 7.48545 4.55342 7.44141L6.86453 4.5H13.1355L15.3397 7.30543C15.4436 7.43757 15.5 7.60075 15.5 7.76879V8.25C15.5 8.94036 14.9404 9.5 14.25 9.5H14C13.3096 9.5 12.75 8.94036 12.75 8.25V7.75C12.75 7.33579 12.4142 7 12 7C11.5858 7 11.25 7.33579 11.25 7.75V8.25C11.25 8.94036 10.6904 9.5 10 9.5C9.30964 9.5 8.75 8.94036 8.75 8.25V7.75C8.75 7.33579 8.41421 7 8 7C7.58579 7 7.25 7.33579 7.25 7.75V8.25C7.25 8.94036 6.69036 9.5 6 9.5Z" fill="#303030"/>
+                            </svg>
+                            <p>All stores</p>
+                        </a>
+                    </li>
+                </div>
+
+                <div class="pd-second-section">
+                    <li><a href="https://admin.shopify.com" role="menuitem" target="_blank">Change Log</a></li>
+                    <li><a href="https://admin.shopify.com" role="menuitem" target="_blank">Help Center</a></li>
+                    <li><a href="https://admin.shopify.com" role="menuitem" target="_blank">Community forums</a></li>
+                    <li><a href="https://admin.shopify.com" role="menuitem" target="_blank">Hire a Shopify Partner</a></li>
+                    <li><a href="https://admin.shopify.com" role="menuitem" target="_blank">Keyboard shortcuts</a></li>
+                </div>
+
+                <div class="pd-third-section">
+                    <li class="display-email">
+                        <a href="" role="menuitem">
+                            <p>David Michael</p>
+                            <p>davidmicheal@gmail.com</p>
+                        </a>
+                    </li>
+                    <li><a href="#" role="menuitem">Manage account</a></li>
+                    <li><a href="#" role="menuitem">Log out</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- ******************** MAIN SECTION ******************** -->
+    <div class="main-container">
+
+        <!-- ******************** EXTEND TRIAL BANNER ******************** -->
+        <div class="trial-banner" id="trialBanner">
+            <div class="trial-info">
+                <p>Extend your trial for $1/month for 3 months on select plans.</p>
+                <a href="https://www.shopify.com/pricing" target="_blank" aria-label="Select Plan" >Select a plan</a>
+            </div>
+
+            <button class="close-btn" aria-controls="trialBanner" aria-label="close trial call-out">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.9697 15.0303C14.2626 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2626 15.0303 13.9697L11.0607 10L15.0303 6.03033C15.3232 5.73744 15.3232 5.26256 15.0303 4.96967C14.7374 4.67678 14.2626 4.67678 13.9697 4.96967L10 8.93934L6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L8.93934 10L4.96967 13.9697C4.67678 14.2626 4.67678 14.7374 4.96967 15.0303C5.26256 15.3232 5.73744 15.3232 6.03033 15.0303L10 11.0607L13.9697 15.0303Z" fill="#E3E3E3"/>
+                </svg>
+            </button>
+        </div>
+
+
+        <!-- ******************** SETUP GUIDE SECTION  ******************** -->
+        <div class="setup-guide">
+            <div class="sg-header">
+                <div class="sg-info">
+                    <div class="sg-texts">
+                        <h4>Setup guide</h4>
+                        <p>Use this personalized guide to get your store up and running.</p>
+                    </div>
+                    <div class="sg-progress">
+                        <label for="stepProgress"><span id="checkboxFraction">0 / 5</span> completed</label>
+                        <progress id="stepProgress" value="0" max="100"> </progress>
+                    </div>
+                </div>
+    
+                <button class="collapse-btn" id="collapse-button" aria-haspopup="true" aria-expanded="false" aria-controls="accordion-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="expand-guide">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.71967 8.46967C6.01256 8.17678 6.48744 8.17678 6.78033 8.46967L10.25 11.9393L13.7197 8.46967C14.0126 8.17678 14.4874 8.17678 14.7803 8.46967C15.0732 8.76256 15.0732 9.23744 14.7803 9.53033L10.7803 13.5303C10.4874 13.8232 10.0126 13.8232 9.71967 13.5303L5.71967 9.53033C5.42678 9.23744 5.42678 8.76256 5.71967 8.46967Z" fill="#4A4A4A"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="collapse-guide">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5303 12.2803C14.2374 12.5732 13.7626 12.5732 13.4697 12.2803L10 8.81066L6.53033 12.2803C6.23744 12.5732 5.76256 12.5732 5.46967 12.2803C5.17678 11.9874 5.17678 11.5126 5.46967 11.2197L9.46967 7.21967C9.76256 6.92678 10.2374 6.92678 10.5303 7.21967L14.5303 11.2197C14.8232 11.5126 14.8232 11.9874 14.5303 12.2803Z" fill="#4A4A4A"/>
+                    </svg>
+                </button>
+            </div>
+
+
+            <!-- ******************** ACCORDION AREA  ******************** -->
+            <div class="accordion-container" id="accordion-area" aria-labelledby="collapse-button" role="menu">
+
+                <!-- ******************** FIRST ITEM  ******************** -->
+                <div class="accordion-item" tabindex="0">
+                    <div class="accordion-content">
+                        <div class="item-header">
+                            <div class="check-item">
+                                <label>
+                                    <input type="checkbox" name="" id="" autocomplete="off">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none">
+                                            <path d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2" stroke="#2a2a2a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                                            <path d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z" fill="#fff"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                            <p>Customize your online store</p>
+                        </div>
+                        <div class="item-content">
+                            <p>Choose a theme and add your logo, colors, 
+                                and images to reflect your brand.
+                                <a href="">Learn more</a>
+                            </p>
+                            <button>Customize Theme</button>
+                        </div>
+                    </div>
+                    <div class="item-content-image">
+                        <img src="https://crushingit.tech/hackathon-assets/customise-store.png" alt="">
+                    </div>
+                </div>
+
+                <!-- ******************** SECOND ITEM  ******************** -->
+                <div class="accordion-item" tabindex="0">
+                    <div class="accordion-content">
+                        <div class="item-header">
+                            <div class="check-item">
+                                <label>
+                                    <input type="checkbox" name="" id="" autocomplete="off">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 28 28" fill="none">
+                                            <path d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2" stroke="#2a2a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                                            <path d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z" fill="#fff"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                            <p>Add your first product</p>
+                        </div>
+                        <div class="item-content">
+                            <p>Write a description, add photos, and set 
+                                pricing for the products you plan to sell.
+                                <a href="">Learn more</a>
+                            </p>
+                            <span><button style="margin-right: 1rem;">Add Products</button> <button style="padding: 0.375rem 0.75rem; background: none; border: none; color: #404040; box-shadow: none;">Import Product</button></span>
+                        </div>
+                    </div>
+                    <div class="item-content-image">
+                        <img src="https://crushingit.tech/hackathon-assets/product.png" alt="">
+                    </div>
+                </div>
+
+                <!-- ******************** THIRD ITEM  ******************** -->
+                <div class="accordion-item" tabindex="0">
+                    <div class="accordion-content">
+                        <div class="item-header">
+                            <div class="check-item">
+                                <label>
+                                    <input type="checkbox" name="" id="" autocomplete="off">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 28 28" fill="none">
+                                            <path d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2" stroke="#2a2a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                                            <path d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z" fill="#fff"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                            <p>Add a custom domain</p>
+                        </div>
+                        <div class="item-content">
+                            <p>Your current domain is 222219.myshopify.com 
+                                but you can add a custom domain to help customers 
+                                find your online store.
+                                <a href="">Learn more</a>
+                            </p>
+                            <button>Add domain</button>
+                        </div>
+                    </div>
+                    <div class="item-content-image">
+                        <img src="https://crushingit.tech/hackathon-assets/website.png" alt="">
+                    </div>
+                </div>
+
+                <!-- ******************** FOURTH ITEM  ******************** -->
+                <div class="accordion-item" tabindex="0">
+                    <div class="accordion-content">
+                        <div class="item-header">
+                            <div class="check-item">
+                                <label>
+                                    <input type="checkbox" name="" id="" autocomplete="off">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 28 28" fill="none">
+                                            <path d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2" stroke="#2a2a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                                            <path d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z" fill="#fff"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                            <p>Name your store</p>
+                        </div>
+                        <div class="item-content">
+                            <p>Your temporary store name is currently Davii collections. 
+                                The store name appears in your admin and your online store.
+                                <a href="">Learn more</a>
+                            </p>
+                            <button>Name store</button>
+                        </div>
+                    </div>
+                    <div class="item-content-image">
+                        <img src="https://crushingit.tech/hackathon-assets/name-store.png" alt="">
+                    </div>
+                </div>
+
+                <!-- ******************** FIFTH ITEM  ******************** -->
+                <div class="accordion-item" tabindex="0">
+                    <div class="accordion-content">
+                        <div class="item-header">
+                            <div class="check-item">
+                                <label>
+                                    <input type="checkbox" name="" id="" autocomplete="off">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 28 28" fill="none">
+                                            <path d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2" stroke="#2a2a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                                            <path d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z" fill="#fff"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                            <p>Set up a payment provider</p>
+                        </div>
+                        <div class="item-content">
+                            <p>Choose a payment provider to start accepting payments. 
+                                You'll need to create an account with the payment provider 
+                                and set it up with your Shopify store.
+                                <a href="">Learn more</a>
+                            </p>
+                            <button>Set up payment</button>
+                        </div>
+                    </div>
+                    <div class="item-content-image">
+                        <img src="https://crushingit.tech/hackathon-assets/payment.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
