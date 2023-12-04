@@ -158,35 +158,22 @@ closeBtn.addEventListener('keydown', function (event) {
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 //TOGGLING THE ACCORDION DISPLAY
-const accordionToggle = () => {
-    expandGuide.addEventListener('click', () => {
-        accordionContainer.style.display = 'none'
-        expandGuide.style.display = 'none'
-        collapseGuide.style.display = 'block'
-
-        collapseBtn.ariaExpanded = "false"
-    })
-    
-    collapseGuide.addEventListener('click', () => {
-        accordionContainer.style.display = 'block'
-        expandGuide.style.display = 'block'
-        collapseGuide.style.display = 'none'
-
-        collapseBtn.ariaExpanded = "true"
-    })
-}
-
-accordionToggle()
-
-
 collapseBtn.addEventListener('keyup', (event) => {
     if(event.key === 'ArrowUp') {
-        accordionContainer.style.display = (accordionContainer.style.display === 'none' || accordionContainer.style.display === '') ? 'block' : 'none';
-        expandGuide.style.display = (expandGuide.style.display === 'none' || expandGuide.style.display === '') ? 'block' : 'none';
+        accordionContainer.style.display = (accordionContainer.style.display === 'none') ? 'block' : 'none';
+        expandGuide.style.display = (expandGuide.style.display === 'none') ? 'block' : 'none';
         collapseGuide.style.display = (collapseGuide.style.display === 'block') ? 'none' : 'block';
 
         collapseBtn.ariaExpanded = (collapseBtn.ariaExpanded === "true") ? 'false' : 'true'
     }
+})
+
+collapseBtn.addEventListener('click', () => {
+    accordionContainer.style.display = (accordionContainer.style.display === 'none') ? 'block' : 'none';
+    expandGuide.style.display = (expandGuide.style.display === 'none') ? 'block' : 'none';
+    collapseGuide.style.display = (collapseGuide.style.display === 'block') ? 'none' : 'block';
+
+    collapseBtn.ariaExpanded = (collapseBtn.ariaExpanded === "true") ? 'false' : 'true'
 })
 
 
@@ -213,6 +200,44 @@ accordions.forEach((accord) => {
         accord.classList.add("active-accordion");
     })
 })
+
+
+//NAVIGATING THE ACCORDION WITH ARROW KEYS
+const accordSteps = accordionContainer.querySelectorAll('[role="menuitem"]');
+
+const accordionNavigtor = (event, accItem) => {
+    const isLastAccItem = accItem === accordionItem.length -1;
+    const isFirstAccItem = accItem === 0;
+
+    const nextAccItem = accordSteps.item(accItem +1)
+    const prevAccItem = accordSteps.item(accItem -1)
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        if (isLastAccItem) {
+            accordSteps.item(0).focus()
+
+            return;
+        }
+
+        nextAccItem.focus();
+    }
+
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        if (isFirstAccItem) {
+            accordSteps.item(accordSteps.length-1).focus()
+
+            return;
+        }
+
+        prevAccItem.focus();
+    }
+}
+
+accordSteps.forEach(function(menuitem, menuItemIndex) {
+    menuitem.addEventListener('keyup', (event) => {
+        accordionNavigtor(event, menuItemIndex)
+    })
+});
 
 
 
